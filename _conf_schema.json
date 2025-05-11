@@ -1,0 +1,28 @@
+{
+    "at_prob": {
+        "description": "@发送者概率",
+        "type": "float",
+        "hint": "",
+        "default": 0.2
+    },
+    "reply_prob": {
+        "description": "引用回复概率",
+        "type": "float",
+        "hint": "",
+        "default": 0.2
+    },
+   "additional_chars": {
+        "description": "保留的标点符号",
+        "type": "string",
+        "hint": "",
+        "default": ",?!/\\()（）"
+    },
+    "waking_regex": {
+        "type": "list",
+        "description": "唤醒词正则表达式",
+        "hint": "匹配成功则触发唤醒，例子：即只要消息中带有 `苗` 时触发唤醒的正则表达式：.*苗.*",
+        "default": [
+            ".*苗.*"
+        ]
+    }
+}

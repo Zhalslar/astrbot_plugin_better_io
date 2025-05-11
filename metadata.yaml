@@ -1,0 +1,6 @@
+name: astrbot_plugin_better_io # 这是你的插件的唯一识别名。
+desc: 对输入输出的消息进行各种预处理，从而获得更好的体验 # 插件简短描述
+help: 略  # 插件的帮助信息
+version: v1.0.0 # 插件版本号。格式：v1.1.1 或者 v1.1
+author: Zhalslar # 作者
+repo: https://github.com/Zhalslar/astrbot_plugin_better_io # 插件的仓库地址
