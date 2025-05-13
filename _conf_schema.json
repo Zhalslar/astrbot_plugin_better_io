@@ -2,27 +2,57 @@
     "at_prob": {
         "description": "@发送者概率",
         "type": "float",
-        "hint": "",
-        "default": 0.2
+        "hint": "当消息中包含文本时，按概率@发送者",
+        "default": 0.001
     },
     "reply_prob": {
         "description": "引用回复概率",
         "type": "float",
-        "hint": "",
-        "default": 0.2
+        "hint": "当回复消息中包含文本时，按概率引用回复",
+        "default": 0.1
     },
-   "additional_chars": {
-        "description": "保留的标点符号",
+    "clean_text_length": {
+        "description": "文本清理长度阈值",
+        "type": "int",
+        "hint": "多少个字符以下时执行文本清理，可以防止对长文本误清理",
+        "default": 150
+    },
+    "clean_punctuation": {
         "type": "string",
+        "description": "需要清理的特殊符号",
+        "hint": "填写正则表达式，例如：[@#￥%()\\$\\^&*{}\\$\\$`~！!?:;\"<>+\\-=—／《》]",
+        "default": "[@#￥%()\\$\\^&*{}\\$\\$`~！!?:;\"<>+\\-=—／《》]"
+    },
+    "remove_lead": {
+        "type": "list",
+        "description": "去除指定开头字符",
         "hint": "",
-        "default": ",?!/\\()（）"
+        "default": [
+            "阿苗",
+            "print"
+        ]
     },
     "waking_regex": {
         "type": "list",
         "description": "唤醒词正则表达式",
-        "hint": "匹配成功则触发唤醒，例子：即只要消息中带有 `苗` 时触发唤醒的正则表达式：.*苗.*",
+        "hint": "匹配成功则触发唤醒，例子：.*苗.*",
         "default": [
             ".*苗.*"
         ]
+    },
+    "error_keywords": {
+        "type": "list",
+        "default": [
+            "请求失败",
+            "出现异常"
+        ],
+        "description": "需要拦截的错误关键字列表",
+        "hint": "消息内容中包含列表中任一关键字时，消息将被拦截"
+    },
+    "user_blacklist": {
+        "type": "list",
+        "description": "黑名单用户ID列表",
+        "hint": "消息发送者ID在列表中时，消息将被拦截",
+        "default": []
     }
 }
